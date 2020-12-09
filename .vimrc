@@ -8,7 +8,8 @@
 "---[ nocompatible ]-------------------------------------------------
   set nocompatible
 "---[ vundle ]-------------------------------------------------------
-  set rtp+=~/.vim/bundle/Vundle.vim
+" git clone https://github.com/VundleVim/Vundle.vim.git /etc/vim/bundle/Vundle.vim
+  set rtp+=/etc/vim/bundle/Vundle.vim
 "---[ plugins ]------------------------------------------------------
   call vundle#begin()
   " let Vundle manage Vundle, required
@@ -69,8 +70,8 @@
   set showcmd         " show command is it's typed
   set ruler           " show cursor position
   set number          " show line numbers
-  set softtabstop=2   " a tab is two spaces
-  set shiftwidth=2    " number of spaces to use for autoindenting
+  set softtabstop=4   " a tab is four spaces
+  set shiftwidth=4    " number of spaces to use for autoindenting
   set expandtab       " use spaces in place of tabs
   set smarttab        " insert tabs on the start of a line according to
                       "    shiftwidth, not tabstop
@@ -99,7 +100,7 @@
   set sidescrolloff=10  " minimum number of cols left/right of cursor
   set textwidth=0     " prevent hard wrapping
   set wrapmargin=0    " prevent hard wrapping
-  set colorcolumn=80  " add visual demarkation at 80 char
+  set colorcolumn=140  " add visual demarkation at 140 char
   set showbreak=↪     " change the wrap character
   set fo+=l           " do not break up lines in insert mode
   set fo+=r           " add comment leader in insert mode
