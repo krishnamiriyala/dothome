@@ -54,10 +54,6 @@
   " Tabular filter and align text
   Plugin 'godlygeek/tabular'
   " Molokai is a high-contrast, colorful colortheme
-  Plugin 'tomasr/molokai'
-  " Badwolf, ditto; the original sjl version lacks contrasting Diff colors
-  " Plugin 'sjl/badwolf'
-  Plugin 'alx741/badwolf'
   " Testing...
   Plugin 'kana/vim-textobj-user'
   Plugin 'bps/vim-textobj-python'
@@ -133,7 +129,6 @@
   endif
 
   if &t_Co >= 256 || has("gui_running")
-    colorscheme badwolf
     "highlight 80th column
     highlight ColorColumn ctermbg=196 guibg=#ff2c4b
     "highlight text that runs over 80 chars
@@ -232,7 +227,6 @@
   " Using Liberation Mono for Powerline, 13pt
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
-  let g:airline_theme='badwolf'
   nnoremap <leader>a <Esc>:AirlineToggle<CR>
 "---[ Buffer Explorer ]-----------------------------------------------
   " Show no name buffers
