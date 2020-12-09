@@ -1,0 +1,21 @@
+screen -t `hostname` top
+screen -t nsx
+select 1
+stuff "nsx ^M"
+screen -t nsx-qe
+select 2
+stuff "nsx-qe ^M"
+screen -t go
+select 3
+stuff "nsxtf ^M"
+select 1
+
+#escape "^T^t"           # bind special key to Ctrl + T
+#
+## turn sending of screen messages to hardstatus off
+#hardstatus alwayslastline
+## Set the hardstatus prop on gui terms to set the titlebar/icon title
+#termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+## use this for the hard status string
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+## hardstatus string "%h%? users: %u%?"
