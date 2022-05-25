@@ -1,6 +1,9 @@
+*
 !.bashrc
 !.gitignore
-!LICENSE
-!README.md
 !.screenrc
 !.vimrc
+!.vim
+!.vim/autoload/plug.vim
+!LICENSE
+!README.md
