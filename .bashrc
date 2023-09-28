@@ -132,7 +132,26 @@ export PATH="/usr/local/go/bin":${PATH}
   export PATH="$HOME/.local/bin:${PATH}" ||
   echo "LOCALBIN $HOME/.local/bin is already setup in PATH"
 
-export PATH=$PATH:/home/miriyalak/bin
-alias d='kubectl --kubeconfig /home/miriyalak/demo.kubeconfig'
+export PATH=$PATH:$HOME/bin
+alias c='kubectl --kubeconfig /home/miriyalak/citest.kubeconfig'
+alias dc_cleanup='docker image prune; docker volume prune;  docker rm -f `docker ps -a  | grep -v gitlab-runner |cut -d " " -f 1 | grep -v CONTAINER` '
+alias gb_cleanup='git branch | grep -v main$ | grep -v master$ | xargs -I {} git branch -D {}'
 
 source '/home/miriyalak/lib/azure-cli/az.completion'
+
+xreplace() {
+    if [ "$#" -lt 3 ]; then
+        echo "Usage: xreplace <filename> <old_text1> <new_text1> [<old_text2> <new_text2> ...]"
+        return 1
+    fi
+
+    filename="$1"
+    shift  # Remove the filename from the argument list
+
+    # Iterate through pairs of old_text and new_text and apply replacements
+    while [ "$#" -ge 2 ]; do
+        sed -i "s%$1%$2%g" $filename
+        shift 2  # Remove processed old_text and new_text from the argument list
+    done
+}
+eval "$(/bin/brew shellenv)"
